@@ -3,7 +3,7 @@
 @section('title', 'Welcome to CRANE ACADEMY')
 
 @section('content')
-<section class="relative bg-blue-50 min-h-screen flex flex-col justify-center items-center text-center px-6 md:px-0 overflow-hidden">
+<section class="relative bg-blue-50 min-h-screen flex flex-col justify-center items-center text-center px-6 md:px-0 overflow-hidden reveal opacity -0">
     <!-- Decorative background circles -->
     <div class="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
     <div class="absolute bottom-0 right-0 w-72 h-72 bg-blue-300 rounded-full opacity-20 translate-x-1/3 translate-y-1/4"></div>

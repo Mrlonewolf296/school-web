@@ -15,7 +15,7 @@
 </section>
 
 <!-- Academic Philosophy -->
-<section class="py-16 bg-white">
+<section class="py-16 bg-white reveal opacity -0">
     <div class="max-w-5xl mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-6">Our Approach to Learning</h2>
         <p class="text-gray-700 leading-relaxed">

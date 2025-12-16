@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- Hero -->
-<section class="bg-blue-600 text-white py-20 text-center">
+<section class="bg-blue-600 text-white py-20 text-center reveal opacity -0">
     <div class="max-w-3xl mx-auto px-6">
         <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
             Admissions at {{ config('school.name') }}
