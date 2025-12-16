@@ -10,7 +10,7 @@
 
     <!-- Hero Content -->
     <h1 class="text-3xl md:text-5xl font-extrabold mb-4 text-gray-900">
-        Welcome to CRANE ACADEMY
+        Welcome to THE CRANE ACADEMY
     </h1>
     <p class="text-lg md:text-xl mb-8 text-gray-700 max-w-2xl">
         A nurturing environment for every child to thrive academically and socially.
@@ -106,10 +106,10 @@
 
 <section class="bg-blue-50 py-12 px-6">
     <h2 class="text-3xl font-semibold text-center mb-8">Visit Us</h2>
-    <p class="text-center mb-4">123 School Avenue, Your City, Country</p>
+    <p class="text-center mb-4">The Crane Academy near Kitale airport, Kitale, Kenya</p>
     <div class="flex justify-center">
         <iframe class="w-full md:w-2/3 h-64 rounded shadow" 
-            src="https://www.google.com/maps/embed?pb=!1m18!..." 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d849.2707214940768!2d34.9597592!3d0.9798036!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17818997d4f2a8ed%3A0xf2b6d188381afb8d!2sTHE%20CRANE%20ACADEMY%20PRIMARY%20SCHOOL!5e1!3m2!1ssw!2ske!4v1765897150199!5m2!1ssw!2ske"
             style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </section>
