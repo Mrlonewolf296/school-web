@@ -1,7 +1,7 @@
 <nav class="bg-white shadow-md px-6 py-4">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
         <!-- Logo -->
-        <a href="{{ route('home') }}" class="text-2xl font-bold text-blue-600">Private School</a>
+        <a href="{{ route('home') }}" class="text-2xl font-bold text-blue-600">CRANE ACADEMY</a>
 
         <!-- Menu -->
         <ul class="hidden md:flex gap-6 items-center text-gray-700 font-medium">
