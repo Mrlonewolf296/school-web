@@ -6,6 +6,7 @@
         <!-- Menu -->
         <ul class="hidden md:flex gap-6 items-center text-gray-700 font-medium">
             <li><a href="{{ route('home') }}" class="hover:text-blue-600 transition">Home</a></li>
+            <li><a href="{{ route('about') }}" class="hover:text-blue-600 transition">About</a></li>
             <li><a href="{{ route('contact') }}" class="hover:text-blue-600 transition">Contact</a></li>
             <li><a href="{{ route('admissions') }}" class="hover:text-blue-600 transition">Admissions</a></li>
             <li><a href="{{ route('academics') }}" class="hover:text-blue-600 transition">Academics</a></li>
