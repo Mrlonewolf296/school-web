@@ -1,0 +1,201 @@
+/*
+ * Replaced Tailwind with plain CSS
+ * Add your reset, base typography, and utility classes here.
+ */
+
+/* Simple reset */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #app { height: 100%; }
+body { margin: 0; font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+/* Layout helpers (add more as needed) */
+.container { width: 100%; max-width: 1100px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+.flex { display: flex; }
+.hidden { display: none; }
+.text-center { text-align: center; }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* Reveal helper for elements that should animate when scrolled into view */
+.reveal { opacity: 0; transform: translateY(12px); will-change: opacity, transform; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-left { animation: slideLeft 0.7s ease-out forwards; }
+
+@keyframes scaleUp {
+    from { opacity: 0; transform: scale(.97) translateY(8px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-scale-up { animation: scaleUp 0.75s cubic-bezier(.2,.9,.2,1) forwards; }
+
+/* small utility to help with staggering via inline style: animation-delay */
+.in-view { opacity: 1; }
+
+/* -------- Navbar -------- */
+.site-nav { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.08); padding: 1rem 0; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+.site-logo { font-size: 1.25rem; font-weight: 700; color: #2563eb; text-decoration: none; }
+.nav-menu { display: none; list-style: none; margin: 0; padding: 0; gap: 1.5rem; align-items: center; }
+.nav-menu li { margin: 0; }
+.nav-link { color: #374151; text-decoration: none; font-weight: 500; transition: color 150ms; }
+.nav-link:hover { color: #2563eb; }
+.mobile-toggle { display: block; }
+.mobile-btn { background: transparent; border: 0; color: #374151; }
+.icon { width: 1.5rem; height: 1.5rem; }
+.mobile-menu { display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0; padding: 0 1rem; color: #374151; font-weight: 500; }
+
+/* -------- Hero -------- */
+.hero { position: relative; height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 1rem; }
+.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+.hero-content { position: relative; z-index: 10; max-width: 48rem; padding: 0 0.5rem; color: #fff; }
+.hero-title { font-size: 1.875rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.1; }
+.hero-sub { color: #e5e7eb; margin-bottom: 2rem; }
+.hero-cta { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+
+/* Buttons */
+.btn { display: inline-block; padding: 0.75rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 600; text-align: center; }
+.btn-primary { background: #2563eb; color: #fff; }
+.btn-primary:hover { background: #1e40af; }
+.btn-secondary { background: #fff; color: #111827; }
+.btn-secondary:hover { background: #f3f4f6; }
+@media (min-width: 640px) { .hero-cta { flex-direction: row; } .btn { min-width: 160px; } }
+@media (min-width: 768px) { .hero { height: 100vh; } .hero-title { font-size: 3rem; } }
+
+/* -------- Sections & helpers -------- */
+.intro { position: relative; background: #eff6ff; padding: 4rem 0; }
+.intro-inner { max-width: 48rem; margin: 0 auto; text-align: center; }
+.section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #111827; }
+.section-sub { color: #374151; font-size: 1.125rem; }
+
+.decor { position: absolute; border-radius: 9999px; opacity: 0.2; }
+.decor-1 { top: 0; left: 0; width: 16rem; height: 16rem; background: #bfdbfe; transform: translate(-50%, -50%); }
+.decor-2 { bottom: 0; right: 0; width: 18rem; height: 18rem; background: #93c5fd; transform: translate(33%, 25%); }
+
+/* ---- Cards ---- */
+.why .cards { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 72rem; margin: 0 auto; }
+.card { background: #f8fafc; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 6px 20px rgba(2,6,23,0.03); transition: box-shadow 200ms, transform 200ms; }
+.card:hover { box-shadow: 0 10px 30px rgba(2,6,23,0.06); transform: translateY(-4px); }
+.card-title { font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem; }
+.card-body { color: #374151; }
+
+/* ---- Features ---- */
+.features .grid-3 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 72rem; margin: 0 auto; }
+.feature { background: #fff; padding: 1.5rem; border-radius: 0.75rem; text-align: center; box-shadow: 0 6px 20px rgba(2,6,23,0.03); transition: transform 200ms; }
+.feature:hover { transform: scale(1.03); }
+.feature-img { width: 100%; height: 12rem; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1rem; }
+.feature-title { font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem; }
+.feature-body { color: #4b5563; font-size: 0.9rem; }
+
+.visit { background: #eff6ff; padding: 3rem 0; }
+
+/* ---- Responsive ---- */
+@media (min-width: 768px) {
+    .nav-menu { display: flex; }
+    .mobile-toggle { display: none; }
+    .mobile-menu { display: none !important; }
+    .why .cards { grid-template-columns: repeat(3, 1fr); }
+    .features .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .hero-sub { font-size: 1.125rem; }
+}
+
+/* -------- Footer -------- */
+.site-footer { background: #111827; color: #e5e7eb; padding: 2rem 0; }
+.footer-inner { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+/*.footer-col { }*/
+.footer-title { font-weight: 700; font-size: 1.125rem; margin-bottom: 0.5rem; color: #fff; }
+.footer-text { color: #d1d5db; margin: 0.25rem 0; }
+.footer-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.footer-link { color: #9ca3af; text-decoration: none; }
+.footer-link:hover { color: #fff; }
+.footer-bottom { margin-top: 1.5rem; text-align: center; color: #9ca3af; font-size: 0.875rem; }
+@media (min-width: 768px) { .footer-inner { grid-template-columns: repeat(3, 1fr); } }
+
+/* -------- Admissions page -------- */
+.hero-plain { padding: 4rem 0; color: #fff; background: #2563eb; text-align: center; }
+.hero-admissions .page-title { font-size: 2.25rem; font-weight: 800; margin-bottom: 0.75rem; }
+.hero-admissions .lead { opacity: 0.95; color: #f8fafc; }
+
+.who-can-apply { padding: 4rem 0; background: #f8fafc; }
+.levels-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 64rem; margin: 1.5rem auto 0; }
+.level-card { background: #fff; padding: 1.25rem; border-radius: 0.75rem; font-weight: 700; box-shadow: 0 6px 20px rgba(2,6,23,0.03); text-align: center; }
+@media (min-width: 640px) { .levels-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 768px) { .levels-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.admission-process { padding: 4rem 0; background: #fff; }
+.steps-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 72rem; margin: 0 auto; }
+.step { padding: 1rem; text-align: center; }
+.step-number { font-size: 2rem; font-weight: 800; color: #2563eb; margin-bottom: 0.5rem; }
+@media (min-width: 768px) { .steps-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.secondary-cta { padding: 4rem 0; background: #eff6ff; text-align: center; }
+
+/* -------- About page -------- */
+.page-intro { background: #eff6ff; padding: 6rem 0; text-align: center; }
+.intro-inner { max-width: 48rem; margin: 0 auto; }
+.page-title { font-size: 2.25rem; font-weight: 800; margin-bottom: 1rem; }
+.lead { color: rgb(157, 210, 231); font-size: 1.125rem; }
+
+.two-col { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
+.img-large { width: 100%; height: 16rem; object-fit: cover; border-radius: 0.5rem; box-shadow: 0 6px 20px rgba(2,6,23,0.03); }
+.text-muted { color: #374151; line-height: 1.7; }
+.mv-list { list-style: disc; padding-left: 1.25rem; color: #374151; }
+
+@media (min-width: 768px) { .two-col { grid-template-columns: repeat(2, 1fr); } .img-large { height: 20rem; } .page-title { font-size: 2.75rem; } }
+
+/* -------- Contact page -------- */
+.contact-section { padding: 4rem 0; background: #f8fafc; }
+.contact-section .container { max-width: 48rem; }
+.form-card { background: #fff; padding: 2rem; border-radius: 0.75rem; box-shadow: 0 10px 30px rgba(2,6,23,0.04); }
+.form { display: grid; gap: 1rem; }
+.form-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.form-label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+.form-input { width: 100%; border: 1px solid #e5e7eb; padding: 0.75rem 1rem; border-radius: 0.5rem; }
+.form-input:focus { outline: none; box-shadow: 0 0 0 3px rgba(37,99,235,0.12); border-color: #2563eb; }
+.form-row { margin-bottom: 0.5rem; }
+.btn-full { width: 100%; }
+
+.alert { padding: 0.75rem 1rem; border-radius: 0.5rem; margin-bottom: 1rem; }
+.alert-success { background: #dcfce7; color: #166534; }
+.alert-error { background: #fee2e2; color: #991b1b; }
+.error-list { margin: 0; padding-left: 1.25rem; }
+
+@media (min-width: 768px) { .form-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Levels and cards reuse existing .cards and .card styles, ensure spacing */
+.levels-section { padding: 4rem 0; background: #f8fafc; }
+.philosophy { padding: 3rem 0; background: #fff; }
+.cards { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 72rem; margin: 1.5rem auto; }
+.card { padding: 1.5rem; border-radius: 0.75rem; background: #fff; box-shadow: 0 6px 20px rgba(2,6,23,0.03); }
+.card-title { font-weight: 700; margin-bottom: 0.5rem; }
+.card-body { color: #374151; }
+@media (min-width: 768px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+
+/* Page-wide background/text defaults */
+.site-body { background: #f3f4f6; color: #111827; }
+
+
+
+

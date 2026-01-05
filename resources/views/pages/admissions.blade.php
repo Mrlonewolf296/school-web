@@ -3,58 +3,47 @@
 @section('content')
 
 <!-- Hero -->
-<section class="bg-blue-600 text-white py-20 text-center reveal opacity -0">
-    <div class="max-w-3xl mx-auto px-6">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
-            Admissions at {{ config('school.name') }}
-        </h1>
-        <p class="text-lg opacity-90">
-            Join a nurturing environment where your child grows academically and socially.
-        </p>
+<section class="hero-plain hero-admissions">
+    <div class="container">
+        <h1 class="page-title reveal" data-animate="fade-up">Admissions at {{ config('school.name') }}</h1>
+        <p class="lead reveal" data-animate="fade-up" data-delay="0.06">Join a nurturing environment where your child grows academically and socially.</p>
     </div>
 </section>
 
 <!-- Who Can Apply -->
-<section class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-6">Who Can Apply</h2>
+<section class="who-can-apply">
+    <div class="container text-center">
+        <h2 class="section-title reveal" data-animate="fade-up">Who Can Apply</h2>
+        <p class="lead reveal" data-animate="fade-up" data-delay="0.06">We admit learners across the following levels:</p>
 
-        <p class="text-gray-700 mb-10">
-            We admit learners across the following levels:
-        </p>
-
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="levels-grid">
             @foreach(config('school.levels') as $level)
-                <div class="bg-white rounded-xl shadow p-6 font-semibold">
-                    {{ $level }}
-                </div>
+                <div class="level-card reveal" data-animate="scale-up" data-delay="{{ $loop->index * 0.08 }}">{{ $level }}</div>
             @endforeach
         </div>
     </div>
 </section>
 
 <!-- Admission Process -->
-<section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-10">
-            Admission Process
-        </h2>
+<section class="admission-process">
+    <div class="container">
+        <h2 class="section-title centered reveal" data-animate="fade-up">Admission Process</h2>
 
-        <div class="grid md:grid-cols-4 gap-8 text-center">
-            <div class="p-6">
-                <div class="text-4xl font-bold text-blue-600 mb-2">1</div>
+        <div class="steps-grid">
+            <div class="step reveal" data-animate="fade-up" data-delay="0.06">
+                <div class="step-number">1</div>
                 <p>Contact the school or visit us for inquiries.</p>
             </div>
-            <div class="p-6">
-                <div class="text-4xl font-bold text-blue-600 mb-2">2</div>
+            <div class="step reveal" data-animate="fade-up" data-delay="0.12">
+                <div class="step-number">2</div>
                 <p>Collect and fill in the admission form.</p>
             </div>
-            <div class="p-6">
-                <div class="text-4xl font-bold text-blue-600 mb-2">3</div>
+            <div class="step reveal" data-animate="fade-up" data-delay="0.18">
+                <div class="step-number">3</div>
                 <p>Assessment and placement (where applicable).</p>
             </div>
-            <div class="p-6">
-                <div class="text-4xl font-bold text-blue-600 mb-2">4</div>
+            <div class="step reveal" data-animate="fade-up" data-delay="0.24">
+                <div class="step-number">4</div>
                 <p>Confirmation and enrollment.</p>
             </div>
         </div>
@@ -62,18 +51,12 @@
 </section>
 
 <!-- Call to Action -->
-<section class="py-20 bg-blue-50 text-center">
-    <h2 class="text-3xl font-bold mb-4">
-        Ready to Get Started?
-    </h2>
-    <p class="text-gray-700 mb-6">
-        Contact us today to begin your child’s admission journey.
-    </p>
-
-    <a href="{{ route('contact') }}"
-       class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-        Contact Admissions
-    </a>
+<section class="cta secondary-cta">
+    <div class="container text-center">
+        <h2 class="section-title reveal" data-animate="fade-up">Ready to Get Started?</h2>
+        <p class="lead reveal" data-animate="fade-up" data-delay="0.06">Contact us today to begin your child’s admission journey.</p>
+        <a href="{{ route('contact') }}" class="btn btn-primary reveal" data-animate="scale-up" data-delay="0.12">Contact Admissions</a>
+    </div>
 </section>
 
 @endsection

@@ -1,26 +1,28 @@
-<footer class="bg-gray-800 text-gray-200 py-8">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-        <div>
-            <h3 class="font-bold text-lg mb-2">THE CRANE ACADEMY</h3>
-            <p>Providing quality education and a nurturing environment for your child.</p>
+<footer class="site-footer">
+    <div class="footer-inner container">
+        <div class="footer-col">
+            <h3 class="footer-title">THE CRANE ACADEMY</h3>
+            <p class="footer-text">Providing quality education and a nurturing environment for your child.</p>
         </div>
-        <div>
-            <h3 class="font-bold text-lg mb-2">Quick Links</h3>
-            <ul class="space-y-1">
-                <li><a href="{{ route('home') }}" class="hover:text-white transition">Home</a></li>
-                <li><a href="{{ route('contact') }}" class="hover:text-white transition">Contact</a></li>
-                <li><a href="#" class="hover:text-white transition">Admissions</a></li>
+
+        <div class="footer-col">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="{{ route('home') }}" class="footer-link">Home</a></li>
+                <li><a href="{{ route('contact') }}" class="footer-link">Contact</a></li>
+                <li><a href="#" class="footer-link">Admissions</a></li>
             </ul>
         </div>
-        <div>
-            <h3 class="font-bold text-lg mb-2">Contact Us</h3>
-            <p>Phone: +254 700 000000</p>
-            <p>Email: info@craneacademy.com</p>
-            <p>Address: SABOTI Location CENTRAL - TRANS NZOIA Division MUNICIPALITY Constituency TRANS NZOIA District</p>
+
+        <div class="footer-col">
+            <h3 class="footer-title">Contact Us</h3>
+            <p class="footer-text">Phone: +254 700 000000</p>
+            <p class="footer-text">Email: info@craneacademy.com</p>
+            <p class="footer-text">Address: SABOTI Location CENTRAL - TRANS NZOIA Division MUNICIPALITY Constituency TRANS NZOIA District</p>
         </div>
     </div>
 
-    <div class="mt-8 text-center text-gray-400 text-sm">
+    <div class="footer-bottom">
         &copy; {{ date('Y') }} THE CRANE ACADEMY. All rights reserved.
     </div>
 </footer>
