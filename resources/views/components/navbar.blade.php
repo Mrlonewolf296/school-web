@@ -26,6 +26,7 @@
     <!-- Mobile menu -->
     <ul id="mobile-menu" class="mobile-menu hidden" role="menu">
         <li><a href="{{ route('home') }}" class="nav-link">Home</a></li>
+        <li><a href="{{ route('about') }}" class="nav-link">About</a></li>
         <li><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
         <li><a href="{{ route('admissions') }}" class="nav-link">Admissions</a></li>
         <li><a href="{{ route('academics') }}" class="nav-link">Academics</a></li>
