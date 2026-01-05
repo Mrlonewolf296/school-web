@@ -30,7 +30,10 @@ body { margin: 0; font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans
 }
 
 /* Reveal helper for elements that should animate when scrolled into view */
-.reveal { opacity: 0; transform: translateY(12px); will-change: opacity, transform; }
+/* Default: show content (good when JS is disabled). If JS is available, the tiny head script adds
+   a `.js` class to <html> which triggers `.js .reveal` to hide elements until animated. */
+.reveal { opacity: 1; will-change: opacity, transform; }
+.js .reveal { opacity: 0; transform: translateY(12px); will-change: opacity, transform; }
 
 @keyframes fadeIn {
     from { opacity: 0; }

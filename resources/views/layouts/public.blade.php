@@ -10,6 +10,8 @@
     <!-- optionally: <link rel="icon" href="{{ asset('favicon.ico') }}?v=2"> to force refresh -->
     <title>@yield('title', 'CRANE ACADEMY')</title>
     {{-- Vite asset compilation for CSS and JavaScript --}} 
+    <!-- Mark page as JS-capable early so reveal elements are hidden only when JS runs -->
+    <script>document.documentElement.classList.add('js');</script> 
 </head>
 <body>
 
@@ -21,5 +23,8 @@
 
     <x-footer />
 
+    <!-- CDN axios for simple XHR usage (used by app JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
