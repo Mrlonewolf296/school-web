@@ -7,9 +7,10 @@
         <ul class="nav-menu" role="menubar">
             <li><a href="{{ route('home') }}" class="nav-link">Home</a></li>
             <li><a href="{{ route('about') }}" class="nav-link">About</a></li>
-            <li><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
+            <li><a href="{{ route('staff') }}" class="nav-link">Staff</a>  </li>
             <li><a href="{{ route('admissions') }}" class="nav-link">Admissions</a></li>
             <li><a href="{{ route('academics') }}" class="nav-link">Academics</a></li>
+            <li><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
         </ul>
 
         <!-- Mobile menu button -->
@@ -27,6 +28,7 @@
     <ul id="mobile-menu" class="mobile-menu hidden" role="menu">
         <li><a href="{{ route('home') }}" class="nav-link">Home</a></li>
         <li><a href="{{ route('about') }}" class="nav-link">About</a></li>
+        <li><a href="{{ route('staff') }}" class="nav-link">Staff</a></li>
         <li><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
         <li><a href="{{ route('admissions') }}" class="nav-link">Admissions</a></li>
         <li><a href="{{ route('academics') }}" class="nav-link">Academics</a></li>
@@ -34,11 +36,41 @@
 </nav>
 
 <script>
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-        const expanded = menu.classList.contains('hidden') ? 'false' : 'true';
-        btn.setAttribute('aria-expanded', expanded);
-    });
+    (function () {
+        function closeMenu(btn, menu) {
+            if (!menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                document.documentElement.classList.remove('no-scroll');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+                var expanded = menu.classList.contains('hidden') ? 'false' : 'true';
+                btn.setAttribute('aria-expanded', expanded);
+                // prevent body scroll when menu open
+                if (expanded === 'true') document.documentElement.classList.add('no-scroll');
+                else document.documentElement.classList.remove('no-scroll');
+            });
+
+            // Close on Escape
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMenu(btn, menu);
+            });
+
+            // Close when clicking outside the menu
+            document.addEventListener('click', function (e) {
+                if (!menu.classList.contains('hidden') && !menu.contains(e.target) && !btn.contains(e.target)) {
+                    closeMenu(btn, menu);
+                }
+            });
+        });
+    })();
 </script>

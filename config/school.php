@@ -2,6 +2,9 @@
 
 return [
     'name' => 'THE CRANE ACADEMY',
+    'founded' => 2017,
+    'faith-based' => true,
+    'curriculum' => 'CBC',
     'type' => 'Private Primary School',
 
     'levels' => [
