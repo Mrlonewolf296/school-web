@@ -14,7 +14,7 @@ Route::view('/contact', 'pages.contact')->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])
     ->name('contact.store');
 
-
+require __DIR__.'/auth.php';
 Route::prefix('admin')
     ->middleware(['auth', 'role:super-admin|admin'])
     ->name('admin.')
