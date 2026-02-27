@@ -22,5 +22,11 @@ Route::prefix('admin')
 
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])
             ->name('dashboard');
+        Route::get('/inquiries', [App\Http\Controllers\Admin\AdminInquiryController::class, 'index'])
+            ->name('inquiries.index');
+        Route::get('/inquiries/{contactMessage}', [App\Http\Controllers\Admin\AdminInquiryController::class, 'show'])
+            ->name('inquiries.show');
+        Route::post('/inquiries/{contactMessage}/mark-as-read', [App\Http\Controllers\Admin\AdminInquiryController::class, 'markAsRead'])
+            ->name('inquiries.markAsRead');
 
 });

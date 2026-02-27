@@ -22,7 +22,7 @@
         <ul class="admin-nav">
             <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
             <li class="coming-soon">Staff (Coming Soon)</li>
-            <li class="coming-soon">Inquiries (Coming Soon)</li>
+            <li><a href="{{ route('admin.inquiries.index') }}">Inquiries</a></li>
             <li class="coming-soon">Students (Coming Soon)</li>
             <li class="coming-soon">Fees (Coming Soon)</li>
             <li class="coming-soon">Reports (Coming Soon)</li>

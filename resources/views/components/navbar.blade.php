@@ -1,7 +1,7 @@
 <nav class="site-nav">
     <div class="container nav-inner">
         <!-- Logo -->
-        <a href="{{ route('home') }}" class="site-logo">THE CRANE ACADEMY</a>
+        <a href="{{ route('login') }}" class="site-logo">THE CRANE ACADEMY</a>
 
         <!-- Menu -->
         <ul class="nav-menu" role="menubar">

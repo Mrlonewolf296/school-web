@@ -20,26 +20,37 @@
                 </ul>
             </div>
         @endif
-
-        <div class="form-card reveal" data-animate="scale-up">
+        <div class="contact-wrapper">
+            <div class="form-card reveal" data-animate="scale-up">
             <form method="POST" action="{{ route('contact.store') }}" class="form">
                 @csrf
 
                 <div class="form-row">
                     <label class="form-label">Full Name</label>
-                    <input type="text" name="name" required class="form-input">
+                    <input type="text" name="name" value="{{ old('name') }}" required class="form-input">
                 </div>
 
                 <div class="form-grid">
                     <div>
                         <label class="form-label">Email Address</label>
-                        <input type="email" name="email" required class="form-input">
+                        <input type="email" name="email" value="{{ old('email') }}" required class="form-input">
                     </div>
 
                     <div>
                         <label class="form-label">Phone Number</label>
-                        <input type="text" name="phone" class="form-input">
+                        <input type="text" name="phone" value="{{ old('phone') }}" class="form-input">
                     </div>
+                </div>
+
+                <div class="form-row">
+                <label class="form-label">Inquiry Type</label>
+                <select name="inquiry_type" class="form-input">
+                    <option value="General">General Inquiry</option>
+                    <option value="Admissions">Admissions</option>
+                    <option value="Fees">Fees</option>
+                    <option value="Visit">Schedule a Visit</option>
+                    <option value="Other">Other</option>
+                </select>
                 </div>
 
                 <div class="form-row">
@@ -49,6 +60,14 @@
 
                 <button type="submit" class="btn btn-primary btn-full">Send Message</button>
             </form>
+            </div>
+            
+            <div class="contact-info-card reveal" data-animate="fade-left">
+                <h3>Get In Touch</h3>
+                <p>Email: info@yourschool.com</p>
+                <p>Phone: +123 456 789</p>
+                <p>Location: City, Country</p>
+            </div>
         </div>
     </div>
 </section>

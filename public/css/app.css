@@ -65,7 +65,7 @@ body { margin: 0; font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans
 /* -------- Navbar -------- */
 .site-nav { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.08); padding: 1rem 0; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-.site-logo { font-size: 1.25rem; font-weight: 700; color: #2563eb; text-decoration: none; }
+.site-logo { font-size: 1.25rem; animation: fadeUp 0.8s ease-out forwards; font-weight: 700; color: #2563eb; text-decoration: none; }
 .nav-menu { display: none; list-style: none; margin: 0; padding: 0; gap: 1.5rem; align-items: center; }
 .nav-menu li { margin: 0; }
 .nav-link { color: #374151; text-decoration: none; font-weight: 500; transition: color 150ms; }
@@ -191,6 +191,35 @@ body { margin: 0; font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans
 .form-input:focus { outline: none; box-shadow: 0 0 0 3px rgba(37,99,235,0.12); border-color: #2563eb; }
 .form-row { margin-bottom: 0.5rem; }
 .btn-full { width: 100%; }
+.contact-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.form-card,
+.contact-info-card {
+    flex: 1 1 400px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-input {
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #004aad;
+    box-shadow: 0 0 0 3px rgba(0,74,173,0.1);
+}
 
 .alert { padding: 0.75rem 1rem; border-radius: 0.5rem; margin-bottom: 1rem; }
 .alert-success { background: #dcfce7; color: #166534; }
@@ -214,6 +243,7 @@ body { margin: 0; font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans
     padding: 3.5rem;
     max-width: 520px;
     width: 100%;
+    justify-content: center;
     margin: 0 auto;
     border-radius: 1.25rem;
     box-shadow: 0 20px 60px rgba(37,99,235,0.15), 0 0 1px rgba(37,99,235,0.3);
@@ -233,6 +263,7 @@ body { margin: 0; font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans
 .auth-form { 
     display: grid; 
     gap: 1.75rem; 
+    justify-content: center;
     
 }
 .auth-form-group { 

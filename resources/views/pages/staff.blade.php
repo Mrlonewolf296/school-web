@@ -22,7 +22,7 @@
             @foreach($leadership as $member)
             <article class="card reveal" data-animate="scale-up" data-delay="{{ $loop->index * 0.08 }}">
                 <div class="card-image">
-                    <img src="{{ $member->photo ? asset('storage/' . $member->photo) : asset('/images/school/staff.jpg') }}" 
+                    <img src="{{ $member->photo ? asset('storage/' . $member->photo) : asset('/images/school/staffs.jpg') }}" 
                          alt="{{ $member->first_name }} {{ $member->last_name }}" 
                          loading="lazy">
                 </div>
@@ -54,7 +54,7 @@
             @foreach($teachers as $member)
             <article class="card reveal" data-animate="scale-up" data-delay="{{ $loop->index * 0.06 }}">
                 <div class="card-image">
-                    <img src="{{ $member->photo ? asset('storage/' . $member->photo) : asset('/images/school/staff.jpg') }}" 
+                    <img src="{{ $member->photo ? asset('storage/' . $member->photo) : asset('/images/school/staffs.jpg') }}" 
                          alt="{{ $member->first_name }} {{ $member->last_name }}" 
                          loading="lazy">
                 </div>

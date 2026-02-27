@@ -2,7 +2,7 @@
 
 return [
     'name' => 'THE CRANE ACADEMY',
-    'founded' => 2017,
+    'founded' => 1996,
     'faith-based' => true,
     'curriculum' => 'CBC',
     'type' => 'Private Primary School',
@@ -21,7 +21,7 @@ return [
     ],
 
     'contact' => [
-        'phone' => '+254700000000', // change later
-        'email' => 'info@craneacademy.ac.ke',
+        'phone' => '+254722850117', // change later
+        'email' => 'craneeps@yahoo.com',
     ],
 ];

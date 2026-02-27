@@ -16,9 +16,9 @@
 
         <div class="footer-col">
             <h3 class="footer-title">Contact Us</h3>
-            <p class="footer-text">Phone: +254 700 000000</p>
-            <p class="footer-text">Email: info@craneacademy.com</p>
-            <p class="footer-text">Address: SABOTI Location CENTRAL - TRANS NZOIA Division MUNICIPALITY Constituency TRANS NZOIA District</p>
+            <p class="footer-text">Phone: {{ config('school.contact.phone') }}</p>
+            <p class="footer-text">Email: {{ config('school.contact.email') }}</p>
+            <p class="footer-text">Address: {{ config('school.location.full') }}</p>
         </div>
     </div>
 

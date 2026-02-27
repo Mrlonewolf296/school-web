@@ -32,7 +32,7 @@
             </h2>
 
             <p class="text-muted reveal" data-animate="fade-up" data-delay="0.06">
-                Established in 2017, Crane Academy was founded with a clear purpose — to provide accessible, high-quality education rooted in Christian values and strong discipline.
+                Established in {{ config('school.founded') }}, {{ config('school.name') }} was founded with a clear purpose — to provide accessible, high-quality education rooted in Christian values and strong discipline.
             </p>
 
             <p class="text-muted reveal" data-animate="fade-up" data-delay="0.10">
